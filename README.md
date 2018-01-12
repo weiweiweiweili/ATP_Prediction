@@ -1,7 +1,7 @@
-MSiA423_Team8_Kehan
+MSiA423_Team13_Wei Tennis Analysis
 ==============================
 
-Repo for MSiA423 project, by Eric.
+Repo for MSiA423 Project
 
 Project Organization
 ------------
