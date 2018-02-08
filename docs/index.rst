@@ -1,20 +1,16 @@
-.. MSiA423_Team8_Kehan documentation master file, created by
-   sphinx-quickstart.
+.. webAppSample documentation master file, created by
+   sphinx-quickstart on Tue Jan 16 12:47:41 2018.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-MSiA423_Team8_Kehan documentation!
-==============================================
-
-Contents:
+Welcome to webAppSample's documentation!
+========================================
 
 .. toctree::
    :maxdepth: 2
+   :caption: Contents:
 
-   getting-started
-   commands
-
-
+   tutorial
 
 Indices and tables
 ==================
