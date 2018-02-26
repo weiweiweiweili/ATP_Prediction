@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>ATP Singles Game Outcome Prediction</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+
+<body class="white">
+  <div class="container">
+
+    <div class="py-5 text-center">
+      <img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHZRJXJ_pD5R-Wy9JnLtSN-mdQ9wwwfUZ2KrD1HaxeJHutjkeK7w" alt="" width="72" height="72">
+      <h2>ATP Singles Game Outcome Prediction</h2>
+    </div>
+
+    <form class="needs-validation" novalidate>
+      <h4 class="mb-3">Tournament Info</h4>
+      <div class="mb-3">
+          <label for="surface">Surface</label>
+          <select class="custom-select d-block w-100" id="surface" required>
+                  <option value="">Choose...</option>
+                  <option>Carpet</option>
+                  <option>Clay</option>
+                  <option>Grass</option>
+                  <option>Hard</option>
+          </select>
+          <div class="invalid-feedback">
+            Please select a valid surface.
+          </div>
+      </div>
+
+      <div class="mb-3">
+          <label for="tourney_level">Tournament Level</label>
+          <select class="custom-select d-block w-100" id="tourney_level" required>
+                  <option value="">Choose...</option>
+                  <option>A</option>
+                  <option>C</option>
+                  <option>D</option>
+                  <option>F</option>
+                  <option>G</option>
+                  <option>M</option>
+          </select>
+          <div class="invalid-feedback">
+            Please select a valid tournement level.
+          </div>
+      </div>
+
+      <hr class="mb-4">
+
+      <h4 class="mb-3">Player Info</h4>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="name">Player 1 Name</label>
+              <select class="custom-select d-block w-100" id="name" required>
+                      <option value="">Choose...</option>
+                      <option>Roger Federer</option>
+                      <option>Rafael Nadal</option>
+                      <option>Stanislas Wawrinka</option>
+                      <option>Novak Djokovic</option>
+                      <option>Andy Murray</option>
+                      <option>Kei Nishikori</option>
+                      <option>Milos Raonic</option>
+                      <option>Tomas Berdych</option>
+                      <option>Dominic Thiem</option>
+                      <option>Gael Monfils</option>
+                      <option>Marin Cilic</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid player.
+              </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="name">Player 2 Name</label>
+              <select class="custom-select d-block w-100" id="name" required>
+                      <option value="">Choose...</option>
+                      <option>Roger Federer</option>
+                      <option>Rafael Nadal</option>
+                      <option>Stanislas Wawrinka</option>
+                      <option>Novak Djokovic</option>
+                      <option>Andy Murray</option>
+                      <option>Kei Nishikori</option>
+                      <option>Milos Raonic</option>
+                      <option>Tomas Berdych</option>
+                      <option>Dominic Thiem</option>
+                      <option>Gael Monfils</option>
+                      <option>Marin Cilic</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid player.
+              </div>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-lg btn-block" type="submit">Show Prediction</button>
+    </form>
+
+  
+
+  </div>  
+
+      <!-- <form action="{{ url_for('add_entry') }}" method=post class=add-entry>
+      <dl>
+        <input type=text size=15 name=title placeholder="Title">
+        <input type=text size=15 name=artist placeholder="Artist">
+        <input type=text size=15 name=album placeholder="Album">
+        <input type=submit value=Add>
+      </dl>
+    </form> -->
+    
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="echarts.min.js"></script>
+</body>
+</html>
