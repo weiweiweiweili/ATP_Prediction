@@ -18,36 +18,82 @@
       <h2>ATP Singles Game Outcome Prediction</h2>
     </div>
 
-    <form class="needs-validation" novalidate>
+    <form class="needs-validation" action="/predict" method="post" novalidate>
       <h4 class="mb-3">Tournament Info</h4>
       
       <div class="mb-3">
-          <label for="tourney_level">Tournament Level</label>
-          <select class="custom-select d-block w-100" id="tourney_level" required>
+          <label for="tourney_name">Tournament Name</label>
+          <select class="custom-select d-block w-100" name="tourney_name" required>
                   <option value="">Choose...</option>
-                  <option>A</option>
-                  <option>C</option>
-                  <option>D</option>
-                  <option>F</option>
-                  <option>G</option>
-                  <option>M</option>
+                  <option>S-Hertogenbosch</option>
+                  <option>Acapulco</option>
+                  <option>Antalya</option>
+                  <option>Antwerp</option>
+                  <option>Atlanta</option>
+                  <option>Auckland</option>
+                  <option>Australian Open</option>
+                  <option>Barcelona</option>
+                  <option>Basel</option>
+                  <option>Bastad</option>
+                  <option>Beijing </option>
+                  <option>Brisbane</option>
+                  <option>Budapest</option>
+                  <option>Buenos Aires</option>
+                  <option>Canada Masters</option>
+                  <option>Chengdu</option>
+                  <option>Chennai</option>
+                  <option>Cincinnati Masters</option>
+                  <option>Delray Beach</option>
+                  <option>Doha</option>
+                  <option>Dubai</option>
+                  <option>Eastbourne</option>
+                  <option>Estoril</option>
+                  <option>Geneva</option>
+                  <option>Gstaad</option>
+                  <option>Halle</option>
+                  <option>Hamburg</option>
+                  <option>Houston</option>
+                  <option>Indian Wells Masters</option>
+                  <option>Istanbul</option>
+                  <option>Kitzbuhel</option>
+                  <option>London</option>
+                  <option>Los Cabos</option>
+                  <option>Lyon</option>
+                  <option>Madrid</option>
+                  <option>Marrakech</option>
+                  <option>Marseille</option>
+                  <option>Memphis</option>
+                  <option>Metz</option>
+                  <option>Miami Masters</option>
+                  <option>Monte Carlo</option>
+                  <option>Montpellier</option>
+                  <option>Moscow</option>
+                  <option>Munich</option>
+                  <option>Newport</option>
+                  <option>Paris Masters</option>
+                  <option>Quito</option>
+                  <option>Rio De Janeiro</option>
+                  <option>Roland Garros</option>
+                  <option>Rome</option>
+                  <option>Rotterdam</option>
+                  <option>Sao Paulo</option>
+                  <option>Shanghai Masters</option>
+                  <option>Shenzhen</option>
+                  <option>Sofia</option>
+                  <option>St. Petersburg</option>
+                  <option>Stockholm</option>
+                  <option>Stuttgart</option>
+                  <option>Sydney</option>
+                  <option>Tokyo</option>
+                  <option>Umag</option>
+                  <option>Us Open</option>
+                  <option>Vienna</option>
+                  <option>Washington</option>
+                  <option>Wimbledon</option>
+                  <option>Winston-Salem</option>
           </select>
           <div class="invalid-feedback">
-            Please select a valid tournement level.
-          </div>
-      </div>
-
-      <div class="mb-3">
-          <label for="surface">Surface</label>
-          <select class="custom-select d-block w-100" id="surface" required>
-                  <option value="">Choose...</option>
-                  <option>Carpet</option>
-                  <option>Clay</option>
-                  <option>Grass</option>
-                  <option>Hard</option>
-          </select>
-          <div class="invalid-feedback">
-            Please select a valid surface.
+            Please select a valid tournement name.
           </div>
       </div>
 
@@ -56,8 +102,8 @@
       <h4 class="mb-3">Player Info</h4>
       <div class="row">
         <div class="col-md-6 mb-3">
-            <label for="name">Player 1 Name</label>
-              <select class="custom-select d-block w-100" id="name" required>
+            <label for="player1name">Player 1 Name</label>
+              <select class="custom-select d-block w-100" name="player1name" required>
                       <option value="">Choose...</option>
                       <option>Roger Federer</option>
                       <option>Rafael Nadal</option>
@@ -76,8 +122,8 @@
               </div>
         </div>
         <div class="col-md-6 mb-3">
-            <label for="name">Player 2 Name</label>
-              <select class="custom-select d-block w-100" id="name" required>
+            <label for="player2name">Player 2 Name</label>
+              <select class="custom-select d-block w-100" name="player2name" required>
                       <option value="">Choose...</option>
                       <option>Roger Federer</option>
                       <option>Rafael Nadal</option>
