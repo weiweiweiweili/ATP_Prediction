@@ -4,6 +4,7 @@ from msiapp.models import Track
 
 from sklearn.externals import joblib
 
+application = Flask(__name__)
 
 @application.route('/')
 def index():
@@ -16,7 +17,7 @@ def index():
 
     """
 
-    return render_template('index.html', tracks=Track.query.all())
+    return render_template('index.html')
 
 # @application.route('/add', methods=['POST'])
 # def add_entry():
@@ -30,11 +31,12 @@ def index():
 #     db.session.commit()
 
 #     return redirect(url_for('index'))
-@app.route('/predict', methods=['POST'])
-def make_prediction():
-    if request.method=='POST':
-        return render_template('index.html', label="3")
+#@application.route('/results', methods=['POST','GET'])
+#def make_prediction():
+#    if request.method=='POST':
+#        return render_template('results.html', label="3")
 
 if __name__ == "__main__":
-    model = joblib.load('model.pkl')
-    application.run(host=‘0.0.0.0’,debug=True)
+    application.run()
+    #model = joblib.load('model.pkl')
+    #application.run(host='0.0.0.0')
