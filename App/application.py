@@ -47,11 +47,14 @@ def model():
     else:
         tourney_level_G = 1
 
-    user_inputs = [player_ht_diff,player_age_diff,player_rank_diff,player_rank_points_diff, surface_clay, surface_grass, surface_hard, tourney_level_A, tourney_level_G, tourney_level_M]
+    user_inputs = pd.DataFrame(index=[0],columns=['player_ht_diff','player_age_diff','player_rank_diff','player_rank_points_diff', 'surface_clay', 'surface_grass', 'surface_hard', 'tourney_level_A', 'tourney_level_G', 'tourney_level_M'])
+    user_inputs.loc[0]=pd.Series({'player_ht_diff':player_ht_diff,'player_age_diff':player_age_diff,'player_rank_diff':player_rank_diff,'player_rank_points_diff':player_rank_points_diff, 'surface_clay':surface_clay, 'surface_grass':surface_grass, 'surface_hard':surface_hard, 'tourney_level_A':tourney_level_A, 'tourney_level_G':tourney_level_G, 'tourney_level_M':tourney_level_M})
 
     filename = 'msiapp/finalized_model.pickle'
     loaded_model = pickle.load(open(filename, 'rb'))
-    result = loaded_model.predict(user_inputs)
+    result = loaded_model.predict_proba(user_inputs)
+    player1_win = result[:,1]
+    player2_win = result[:,0]
     
     return render_template('results.html')
     #return redirect(url_for('results.html'))
