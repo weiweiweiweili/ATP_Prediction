@@ -53,10 +53,13 @@ def model():
     filename = 'msiapp/finalized_model.pickle'
     loaded_model = pickle.load(open(filename, 'rb'))
     result = loaded_model.predict_proba(user_inputs)
+
+    player1_win = 0.5
+    player2_win = 0.5
     player1_win = result[:,1]
     player2_win = result[:,0]
     
-    return render_template('results.html')
+    return render_template('results.html',p1_odd=player1_win,p2_odd=player2_win)
     #return redirect(url_for('results.html'))
 
 if __name__ == "__main__":
