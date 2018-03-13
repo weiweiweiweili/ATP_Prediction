@@ -1,14 +1,17 @@
 # Save Model Using Pickle
-import pandas as od
+import pandas as pd
 from sklearn import model_selection
 from sklearn.linear_model import LogisticRegression
 import pickle
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
+logging.info("begin training")
 
 dataframe = pd.read_csv('train_data.csv')
 X = dataframe.drop(['result'], axis=1)
 X = X.drop(X.columns[0],axis=1)
 Y = dataframe['result']
-
 
 model = LogisticRegression()
 logreg = model.fit(X, Y)
@@ -16,6 +19,8 @@ logreg = model.fit(X, Y)
 # save the model to disk
 filename = 'finalized_model.pickle'
 pickle.dump(logreg, open(filename, 'wb'))
+
+logging.info("finish training")
  
 # some time later...
  

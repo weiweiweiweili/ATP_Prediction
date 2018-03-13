@@ -18,7 +18,7 @@
       <h2>ATP Singles Game Outcome Prediction</h2>
     </div>
 
-    <form class="needs-validation" action="/predict" method="post" novalidate>
+    <form class="needs-validation" action="{{ url_for('index_model')}}"  method="post" novalidate>
       <h4 class="mb-3">Tournament Info</h4>
       
       <div class="mb-3">
@@ -253,15 +253,6 @@
   
 
   </div>  
-
-      <!-- <form action="{{ url_for('add_entry') }}" method=post class=add-entry>
-      <dl>
-        <input type=text size=15 name=title placeholder="Title">
-        <input type=text size=15 name=artist placeholder="Artist">
-        <input type=text size=15 name=album placeholder="Album">
-        <input type=submit value=Add>
-      </dl>
-    </form> -->
     
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
