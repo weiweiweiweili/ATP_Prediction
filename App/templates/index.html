@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>ATP Singles Game Outcome Prediction</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+
+<body class="white">
+  <div class="container">
+
+    <div class="py-5 text-center">
+      <img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHZRJXJ_pD5R-Wy9JnLtSN-mdQ9wwwfUZ2KrD1HaxeJHutjkeK7w" alt="" width="72" height="72">
+      <h2>ATP Singles Game Outcome Prediction</h2>
+    </div>
+
+    <form class="needs-validation" action="{{ url_for('index_model')}}"  method="post" novalidate>
+      <h4 class="mb-3">Tournament Info</h4>
+      
+      <div class="mb-3">
+          <label for="tourney_name">Tournament Name</label>
+          <select class="custom-select d-block w-100" name="tourney_name" required>
+                  <option value="">Choose...</option>
+                  <option>Acapulco</option>
+                  <option>Antalya</option>
+                  <option>Antwerp</option>
+                  <option>Atlanta</option>
+                  <option>Auckland</option>
+                  <option>Australian Open</option>
+                  <option>Barcelona</option>
+                  <option>Basel</option>
+                  <option>Bastad</option>
+                  <option>Beijing </option>
+                  <option>Brisbane</option>
+                  <option>Budapest</option>
+                  <option>Buenos Aires</option>
+                  <option>Canada Masters</option>
+                  <option>Chengdu</option>
+                  <option>Chennai</option>
+                  <option>Cincinnati Masters</option>
+                  <option>Delray Beach</option>
+                  <option>Doha</option>
+                  <option>Dubai</option>
+                  <option>Eastbourne</option>
+                  <option>Estoril</option>
+                  <option>Geneva</option>
+                  <option>Gstaad</option>
+                  <option>Halle</option>
+                  <option>Hamburg</option>
+                  <option>Houston</option>
+                  <option>Indian Wells Masters</option>
+                  <option>Istanbul</option>
+                  <option>Kitzbuhel</option>
+                  <option>London</option>
+                  <option>London</option>
+                  <option>Los Cabos</option>
+                  <option>Lyon</option>
+                  <option>Madrid</option>
+                  <option>Marrakech</option>
+                  <option>Marseille</option>
+                  <option>Memphis</option>
+                  <option>Metz</option>
+                  <option>Miami Masters</option>
+                  <option>Monte Carlo</option>
+                  <option>Montpellier</option>
+                  <option>Moscow</option>
+                  <option>Munich</option>
+                  <option>Newport</option>
+                  <option>Paris Masters</option>
+                  <option>Quito</option>
+                  <option>Rio De Janeiro</option>
+                  <option>Roland Garros</option>
+                  <option>Rome</option>
+                  <option>Rotterdam</option>
+                  <option>S-Hertogenbosch</option>
+                  <option>Sao Paulo</option>
+                  <option>Shanghai Masters</option>
+                  <option>Shenzhen</option>
+                  <option>Sofia</option>
+                  <option>St. Petersburg</option>
+                  <option>Stockholm</option>
+                  <option>Stuttgart</option>
+                  <option>Sydney</option>
+                  <option>Tokyo</option>
+                  <option>Umag</option>
+                  <option>Us Open</option>
+                  <option>Vienna</option>
+                  <option>Washington</option>
+                  <option>Wimbledon</option>
+                  <option>Winston-Salem</option>
+          </select>
+          <div class="invalid-feedback">
+            Please select a valid tournement name.
+          </div>
+      </div>
+
+      <hr class="mb-4">
+
+      <h4 class="mb-3">Player Info</h4>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="player1name">Player 1 Name</label>
+              <select class="custom-select d-block w-100" name="player1name" required>
+                      <option value="">Choose...</option>
+                      <option>Rafael Nadal</option>
+                      <option>Roger Federer</option>
+                      <option>Marin Cilic</option>
+                      <option>Grigor Dimitrov</option>
+                      <option>David Goffin</option>
+                      <option>Jack Sock</option>
+                      <option>Juan Martin Del Potro</option>
+                      <option>Kevin Anderson</option>
+                      <option>Sam Querrey</option>
+                      <option>Stanislas Wawrinka</option>
+                      <option>Novak Djokovic</option>
+                      <option>Tomas Berdych</option>
+                      <option>John Isner</option>
+                      <option>Jo Wilfried Tsonga</option>
+                      <option>Albert Ramos</option>
+                      <option>Andy Murray</option>
+                      <option>Fabio Fognini</option>
+                      <option>Adrian Mannarino</option>
+                      <option>Kei Nishikori</option>
+                      <option>Gilles Muller</option>
+                      <option>Damir Dzumhur</option>
+                      <option>Milos Raonic</option>
+                      <option>Pablo Cuevas</option>
+                      <option>Richard Gasquet</option>
+                      <option>Alexandr Dolgopolov</option>
+                      <option>Philipp Kohlschreiber</option>
+                      <option>Feliciano Lopez</option>
+                      <option>Filip Krajinovic</option>
+                      <option>David Ferrer</option>
+                      <option>Fernando Verdasco</option>
+                      <option>Robin Haase</option>
+                      <option>Gael Monfils</option>
+                      <option>Ryan Harrison</option>
+                      <option>Benoit Paire</option>
+                      <option>Steve Johnson</option>
+                      <option>Leonardo Mayer</option>
+                      <option>Aljaz Bedene</option>
+                      <option>Paolo Lorenzi</option>
+                      <option>Mischa Zverev</option>
+                      <option>Julien Benneteau</option>
+                      <option>Peter Gojowczyk</option>
+                      <option>Gilles Simon</option>
+                      <option>Donald Young</option>
+                      <option>Horacio Zeballos</option>
+                      <option>Viktor Troicki</option>
+                      <option>Guillermo Garcia Lopez</option>
+                      <option>Federico Delbonis</option>
+                      <option>Florian Mayer</option>
+                      <option>Evgeny Donskoy</option>
+                      <option>Denis Istomin</option>
+                      <option>Marius Copil</option>
+                      <option>Mikhail Kukushkin</option>
+                      <option>Matthew Ebden</option>
+                      <option>Andreas Seppi</option>
+                      <option>Yen Hsun Lu</option>
+                      <option>Vasek Pospisil</option>
+                      <option>Dusan Lajovic</option>
+                      <option>Ivo Karlovic</option>
+                      <option>Cedrik Marcel Stebe</option>
+                      <option>Mikhail Youzhny</option>
+                      <option>Jeremy Chardy</option>
+                      <option>Lukas Lacko</option>
+                      <option>Dudi Sela</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid player.
+              </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="player2name">Player 2 Name</label>
+              <select class="custom-select d-block w-100" name="player2name" required>
+                      <option value="">Choose...</option>
+                      <option>Rafael Nadal</option>
+                      <option>Roger Federer</option>
+                      <option>Marin Cilic</option>
+                      <option>Grigor Dimitrov</option>
+                      <option>David Goffin</option>
+                      <option>Jack Sock</option>
+                      <option>Juan Martin Del Potro</option>
+                      <option>Kevin Anderson</option>
+                      <option>Sam Querrey</option>
+                      <option>Stanislas Wawrinka</option>
+                      <option>Novak Djokovic</option>
+                      <option>Tomas Berdych</option>
+                      <option>John Isner</option>
+                      <option>Jo Wilfried Tsonga</option>
+                      <option>Albert Ramos</option>
+                      <option>Andy Murray</option>
+                      <option>Fabio Fognini</option>
+                      <option>Adrian Mannarino</option>
+                      <option>Kei Nishikori</option>
+                      <option>Gilles Muller</option>
+                      <option>Damir Dzumhur</option>
+                      <option>Milos Raonic</option>
+                      <option>Pablo Cuevas</option>
+                      <option>Richard Gasquet</option>
+                      <option>Alexandr Dolgopolov</option>
+                      <option>Philipp Kohlschreiber</option>
+                      <option>Feliciano Lopez</option>
+                      <option>Filip Krajinovic</option>
+                      <option>David Ferrer</option>
+                      <option>Fernando Verdasco</option>
+                      <option>Robin Haase</option>
+                      <option>Gael Monfils</option>
+                      <option>Ryan Harrison</option>
+                      <option>Benoit Paire</option>
+                      <option>Steve Johnson</option>
+                      <option>Leonardo Mayer</option>
+                      <option>Aljaz Bedene</option>
+                      <option>Paolo Lorenzi</option>
+                      <option>Mischa Zverev</option>
+                      <option>Julien Benneteau</option>
+                      <option>Peter Gojowczyk</option>
+                      <option>Gilles Simon</option>
+                      <option>Donald Young</option>
+                      <option>Horacio Zeballos</option>
+                      <option>Viktor Troicki</option>
+                      <option>Guillermo Garcia Lopez</option>
+                      <option>Federico Delbonis</option>
+                      <option>Florian Mayer</option>
+                      <option>Evgeny Donskoy</option>
+                      <option>Denis Istomin</option>
+                      <option>Marius Copil</option>
+                      <option>Mikhail Kukushkin</option>
+                      <option>Matthew Ebden</option>
+                      <option>Andreas Seppi</option>
+                      <option>Yen Hsun Lu</option>
+                      <option>Vasek Pospisil</option>
+                      <option>Dusan Lajovic</option>
+                      <option>Ivo Karlovic</option>
+                      <option>Cedrik Marcel Stebe</option>
+                      <option>Mikhail Youzhny</option>
+                      <option>Jeremy Chardy</option>
+                      <option>Lukas Lacko</option>
+                      <option>Dudi Sela</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid player.
+              </div>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-lg btn-block" type="submit">Show Prediction</button>
+    </form>
+
+  
+
+  </div>  
+    
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="echarts.min.js"></script>
+</body>
+</html>
