@@ -1,30 +1,48 @@
 from flask import Flask, render_template, request, redirect, url_for
 import pickle
 import pandas as pd
+from sqlalchemy import create_engine
 #from msiapp import app
 
-app = Flask(__name__)
+application = Flask(__name__)
 
+#player_info = pd.read_csv("player_info.csv")
+#tournament_info = pd.read_csv("tournament_info.csv")
 
-@app.route('/',methods=['GET'])
+DB_URL = 'mysql+pymysql://root:mypassword@tryrds.cgc88eyrdecc.us-west-1.rds.amazonaws.com:3306/flask'
+
+application.config['SQLALCHEMY_DATABASE_URI'] = DB_URL
+application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # silence the deprecation warning
+
+engine = create_engine(DB_URL)
+
+# player_info.to_sql(name='player_info', con = engine, if_exists = 'append', index=False)
+player_info = pd.read_sql_query('select * from player_info',con=engine)
+
+# tournament_info.to_sql(name='tournament_info', con = engine, if_exists = 'append', index=False)
+tournament_info = pd.read_sql_query('select * from tournament_info',con=engine)
+
+# db = SQLAlchemy(application)
+
+@application.route('/',methods=['GET'])
 def result():
     return render_template('index.html')
 
 
-@app.route('/', methods=['POST'])
+@application.route('/', methods=['POST'])
 def index_model():
     if request.method == "POST":
         tournament = str(request.form['tourney_name'])
         player1 = str(request.form['player1name'])
         player2 = str(request.form['player2name'])
 
-        player_info = pd.read_csv("player_info.csv")
+        # player_info = pd.read_csv("player_info.csv")
         player_ht_diff = float(player_info.loc[player_info.player_name==player1,'player_ht']) - float(player_info.loc[player_info.player_name==player2,'player_ht'])
         player_age_diff = float(player_info.loc[player_info.player_name==player1,'player_age']) - float(player_info.loc[player_info.player_name==player2,'player_age'])
         player_rank_diff = float(player_info.loc[player_info.player_name==player1,'rank']) - float(player_info.loc[player_info.player_name==player2,'rank'])
         player_rank_points_diff = float(player_info.loc[player_info.player_name==player1,'rank_point']) - float(player_info.loc[player_info.player_name==player2,'rank_point'])
 
-        tournament_info = pd.read_csv("tournament_info.csv")
+        # tournament_info = pd.read_csv("tournament_info.csv")
         surface_clay = 0
         surface_grass = 0
         surface_hard = 0
@@ -64,4 +82,4 @@ def index_model():
         return render_template('results.html',odd=[player1_win,player2_win])
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    application.run(debug=True)
