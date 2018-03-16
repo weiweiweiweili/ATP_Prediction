@@ -3,15 +3,15 @@ import pickle
 import pandas as pd
 #from msiapp import app
 
-app = Flask(__name__)
+application = Flask(__name__)
 
 
-@app.route('/',methods=['GET'])
+@application.route('/',methods=['GET'])
 def result():
     return render_template('index.html')
 
 
-@app.route('/', methods=['POST'])
+@application.route('/', methods=['POST'])
 def index_model():
     if request.method == "POST":
         tournament = str(request.form['tourney_name'])
@@ -64,4 +64,4 @@ def index_model():
         return render_template('results.html',odd=[player1_win,player2_win])
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    application.run(debug=True)
