@@ -8,22 +8,25 @@ import logging
 logging.basicConfig(level=logging.DEBUG)
 logging.info("begin training")
 
-dataframe = pd.read_csv('train_data.csv')
-X = dataframe.drop(['result'], axis=1)
-X = X.drop(X.columns[0],axis=1)
-Y = dataframe['result']
+def train_model():
+	dataframe = pd.read_csv('train_data.csv')
+	X = dataframe.drop(['result'], axis=1)
+	X = X.drop(X.columns[0], axis=1)
+	Y = dataframe['result']
 
-model = LogisticRegression()
-logreg = model.fit(X, Y)
+	model = LogisticRegression()
+	logreg = model.fit(X, Y)
+
+	return logreg
 
 # save the model to disk
 filename = 'finalized_model.pickle'
-pickle.dump(logreg, open(filename, 'wb'))
+pickle.dump(train_model, open(filename, 'wb'))
 
 logging.info("finish training")
- 
+
 # some time later...
- 
+
 # load the model from disk
 # loaded_model = pickle.load(open(filename, 'rb'))
 # result = loaded_model.score(X_test, Y_test)
@@ -44,7 +47,7 @@ logging.info("finish training")
 
 
 # class City(db.Model):
-#     id = db.Column(db.Integer, primary_key=True) 
+#     id = db.Column(db.Integer, primary_key=True)
 #     timestamp = db.Column(db.Integer, unique=False, nullable=False)
 #     name = db.Column(db.String(100), unique=False, nullable=False)
 #     country = db.Column(db.String(100), unique=False, nullable=False)
