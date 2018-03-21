@@ -34,6 +34,7 @@ def result():
 
 @application.route('/', methods=['POST'])
 def index_model():
+	#add docstring and unit test
     if request.method == "POST":
         tournament = str(request.form['tourney_name'])
         player1 = str(request.form['player1name'])
