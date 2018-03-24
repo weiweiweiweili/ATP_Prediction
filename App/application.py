@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 import pickle
 import pandas as pd
 from sqlalchemy import create_engine
+import logging
 # from msiapp import app
 
 application = Flask(__name__)
@@ -28,17 +29,33 @@ tournament_info = pd.read_sql_query(
 
 
 @application.route('/', methods=['GET'])
-def result():
+def index():
+    """Home page of the webapp
+    Args:
+        Null
+    Returns:
+        flask-obj: rendered html page
+        
+    """
+    logger.info('Go to Home page.')
     return render_template('index.html')
 
 
 @application.route('/', methods=['POST'])
-def index_model():
-	#add docstring and unit test
+def result():
+    """Home page of the webapp
+    Args:
+        Null
+    Returns:
+        flask-obj: rendered results page
+    """
+
+
     if request.method == "POST":
         tournament = str(request.form['tourney_name'])
         player1 = str(request.form['player1name'])
         player2 = str(request.form['player2name'])
+        logger.info('Got user input.')
 
         # player_info = pd.read_csv("player_info.csv")
         player_ht_diff = float(player_info.loc[player_info.player_name == player1, 'player_ht']) - float(
@@ -62,6 +79,7 @@ def index_model():
                       tournament_info.tourney_name == tournament, 'surface'])
         tourney_level = str(tournament_info.loc[
                             tournament_info.tourney_name == tournament, 'tourney_level'])
+        logger.info('Calculated relevant features based on user inputs.')
 
         if surface == "Hard":
             surface_hard = 1
@@ -85,6 +103,7 @@ def index_model():
         filename = 'finalized_model.pickle'
         loaded_model = pickle.load(open(filename, 'rb'))
         result = loaded_model.predict_proba(user_inputs)
+        logger.info('Prediction successfully generated.')
 
         player1_win = 0.5
         player2_win = 0.5
@@ -94,4 +113,6 @@ def index_model():
         return render_template('results.html', odd=[player1_win, player2_win])
 
 if __name__ == "__main__":
+    logging.basicConfig(filename='application.log', level=logging.DEBUG)
+    logger = logging.getLogger(__name__) 
     application.run(debug=True)
