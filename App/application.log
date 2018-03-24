@@ -8,3 +8,19 @@ INFO:werkzeug:127.0.0.1 - - [23/Mar/2018 18:49:41] "[33mGET /echarts.min.js HTT
 INFO:werkzeug:127.0.0.1 - - [23/Mar/2018 18:49:41] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
 INFO:werkzeug:127.0.0.1 - - [23/Mar/2018 18:49:41] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
 INFO:werkzeug:127.0.0.1 - - [23/Mar/2018 18:49:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 292-277-500
+INFO:__main__:Go to Home page.
+INFO:werkzeug:127.0.0.1 - - [23/Mar/2018 20:17:32] "[37mGET / HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Mar/2018 20:17:32] "[33mGET /echarts.min.js HTTP/1.1[0m" 404 -
+INFO:__main__:Got user input.
+INFO:__main__:Calculated relevant features based on user inputs.
+INFO:__main__:Prediction successfully generated.
+INFO:werkzeug:127.0.0.1 - - [23/Mar/2018 20:17:39] "[37mPOST / HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Mar/2018 20:17:39] "[37mGET /static/echarts.min.js HTTP/1.1[0m" 200 -
+INFO:__main__:Got user input.
+INFO:__main__:Calculated relevant features based on user inputs.
+INFO:__main__:Prediction successfully generated.
+INFO:werkzeug:127.0.0.1 - - [23/Mar/2018 20:17:47] "[37mPOST / HTTP/1.1[0m" 200 -

@@ -29,7 +29,7 @@ tournament_info = pd.read_sql_query(
 
 
 @application.route('/', methods=['GET'])
-def result():
+def index():
     """Home page of the webapp
     Args:
         Null
@@ -42,7 +42,7 @@ def result():
 
 
 @application.route('/', methods=['POST'])
-def index_model():
+def result():
     """Home page of the webapp
     Args:
         Null
