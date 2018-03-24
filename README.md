@@ -23,13 +23,13 @@ The raw data is from [Github](https://github.com/JeffSackmann/tennis_atp). I use
 [Link to Pivotal Tracker](https://www.pivotaltracker.com/n/projects/2142964)
 
 ## App Demo Slides
-The final demo slides deck is stored in 'docs/Final_Presentation'.
+The final demo slides deck is stored in `docs/Final_Presentation`.
 
 ## Logging
 There are two sets of logging performed.
-	1. 'App/application.log' stores the logs of any user interaction with the application.
-	2. logging for the modelling phase is done in console.
+* `App/application.log` stores the logs of any user interaction with the application.
+* logging for the modelling phase is done in console.
 
 ## Unit Testing
-We performed unit testing for `App/models.py` file and unit test code is included in 'App/unit_test.py'. The functions we tested are:
+We performed unit testing for `App/models.py` file and unit test code is included in `App/unit_test.py`. The functions we tested are:
 * `train_model`
